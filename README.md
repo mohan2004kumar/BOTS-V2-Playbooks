@@ -1,5 +1,3 @@
-'''
-### README.md
 ```markdown
 # BOTS V2 Playbooks
 ## Overview
