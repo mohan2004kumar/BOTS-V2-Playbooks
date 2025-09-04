@@ -1,3 +1,4 @@
+---
 ```markdown
 # Day 1: Unusual Web Activity Investigation
 **Date**: September 04, 2025  
@@ -54,4 +55,5 @@
 
 **Next Actions**: Check Amber’s emails (`sourcetype=stream:smtp`) for phishing or data sharing (Day 2).
 ```
+---
 
