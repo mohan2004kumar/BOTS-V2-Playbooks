@@ -1,4 +1,3 @@
-```markdown
 # BOTS V2 Playbooks
 ## Overview
 21-day Splunk learning with BOTS V2 dataset. Daily case studies for SOC skills: SPL, incident response, playbooks. Uses `botsv2` index, `earliest=0`.
@@ -29,7 +28,3 @@
 
 ## Contact
 Open an issue for feedback.
-
-```
-
-'''
