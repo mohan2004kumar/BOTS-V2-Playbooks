@@ -15,27 +15,27 @@
    ```spl
    | tstats count where index=* by index
    ```  
-   See [Query1_Indexes.png](Query1_Indexes.png)  
+   See ![Query1_Indexes](Query1_Indexes.png)  
 2. **List Sourcetypes**: Confirmed `stream:http`.  
    ```spl
    | tstats count where index=botsv2 by sourcetype
    ```  
-   See [Query2_Sourcetypes.png](Query2_Sourcetypes.png)  
+   See ![Query2_Sourcetypes](Query2_Sourcetypes.png)  
 3. **Amber Search**: Identified IP.  
    ```spl
    index=botsv2 earliest=0 amber
    ```  
-   See [Query3_Amber_Search.png](Query3_Amber_Search.png)  
+   See ![Query3_Amber_Search](Query3_Amber_Search.png)  
 4. **Web Traffic**: Checked for competitor sites.  
    ```spl
    index=botsv2 earliest=0 src_ip=10.0.2.107 sourcetype=stream:http
    ```  
-   See [Query4_Web_Traffic.png](Query4_Web_Traffic.png)  
+   See ![Query4_Web_Traffic](Query4_Web_Traffic.png)  
 5. **Time Spans**: Confirmed dates.  
    ```spl
    index=botsv2 earliest=0 src_ip=10.0.2.107 sourcetype=stream:http|stats count by src_ip
    ```  
-   See [Query5_Time_Spans.png](Query5_Time_Spans.png) 
+   See ![Query5_Time_Spans](Query5_Time_Spans.png) 
 
 **Case Investigated**: Alert about Amber Turing (`amber`) browsing external sites post-acquisition failure, suspecting insider risk or phishing.  
 
