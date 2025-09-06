@@ -1,5 +1,5 @@
 
----
+
 
 ```markdown
 # 📧 Day 2: Suspicious Email Activity Investigation  
@@ -98,5 +98,6 @@ Be prepared to explain:
 - Add MITRE mapping for phishing techniques (e.g., T1566.001)
 ```
 
----
+
+
 
