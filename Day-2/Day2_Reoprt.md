@@ -1,7 +1,7 @@
 
 
 
-```markdown
+
 # 📧 Day 2: Suspicious Email Activity Investigation  
 **Date:** September 05, 2025  
 **Analyst:** Mohan Kumar  
@@ -97,6 +97,7 @@ Be prepared to explain:
 - Create a playbook for email-based threat detection
 - Add MITRE mapping for phishing techniques (e.g., T1566.001)
 ```
+
 
 
 
