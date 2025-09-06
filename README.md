@@ -1,30 +1,91 @@
-# BOTS V2 Playbooks
-## Overview
-21-day Splunk learning with BOTS V2 dataset. Daily case studies for SOC skills: SPL, incident response, playbooks. Uses `botsv2` index, `earliest=0`.
 
-## Structure
-- **/Day1/**: Amber’s web activity investigation with screenshots.
-- Future: Day2, Day3, etc.
-- Files: Reports (.md), queries (.txt), screenshots (.png).
+# 🛡️ BOTS V2 Playbooks – 21-Day SOC Analyst Sprint  
+**Author:** Mohan Kumar  
+**Environment:** Splunk Enterprise on Ubuntu  
+**Dataset:** BOTS V2 (`index=botsv2`)  
+**Goal:** Build a public SOC analyst portfolio with daily investigations, SPL queries, dashboards, and MITRE ATT&CK-aligned playbooks.
 
-## Day 1: Unusual Web Activity
-**Date**: September 04, 2025  
-**Scenario**: Amber (`amber`) browsed external sites post-acquisition failure. Used `stream:http` in `botsv2`.  
-**Findings**: IP: 10.0.2.107; No competitor domain found. Monitor Amber’s activity.  
-**Files**:  
-- `Day1/Day1_Report.md`: Report with screenshots.  
-- `Day1/Day1_Queries.txt`: SPL queries.  
-- `Day1/Query1_Indexes.png` to `Query5_Time_Spans.png`: Results visuals.  
+---
 
-## Tools
-- Splunk Enterprise (Ubuntu).  
-- BOTS V2: [Download](https://s3.amazonaws.com/botsdataset/botsv2/botsv2_data_set.tgz).  
-- GitHub: Tracks progress.
+## 📅 Training Schedule Overview (Sep 04–Sep 24, 2025)
 
-## Future
-- 21 case studies.  
-- Build playbooks, dashboards.  
-- Prep for L1 SOC interviews.
+| Day | Case Study | Focus | MITRE Tactics |
+|-----|------------|-------|----------------|
+| Day 1 | Unusual Web Activity | `stream:http`, IP analysis | Reconnaissance, Collection |
+| Day 2 | Suspicious Email Activity | `stream:smtp`, attachments, recipients | Initial Access, Exfiltration, C2 |
+| Day 3 | Login Attempts | `wineventlog:security`, brute force | Credential Access |
+| Day 4 | SSL Traffic Analysis | `stream:ssl`, certs | Command and Control |
+| Day 5 | DNS Tunneling | `stream:dns`, anomalies | Exfiltration |
+| Day 6 | File Transfers | `stream:ftp`, `stream:scp` | Collection, Exfiltration |
+| Day 7 | Time Sync Audit | All sourcetypes | Detection Engineering |
+| Day 8–14 | Threat Detection | Malware, insider threats, phishing | Multiple tactics |
+| Day 15–21 | Dashboards & Playbooks | Visualizations, alerts, IR docs | Detection, Response, Recovery |
 
-## Contact
-Open an issue for feedback.
+---
+
+## 📁 Folder Structure
+
+```
+BOTS-V2-Playbooks/
+├── Day1/
+│   ├── Day1_Report.md
+│   ├── Query-1.png
+│   └── ...
+├── Day2/
+│   ├── Day2_Report.md
+│   ├── Query-1.png
+│   └── Query-6.png
+...
+├── Dashboards/
+├── Playbooks/
+└── README.md
+```
+
+---
+
+## 🔍 Sample SPL Query (Day 2 – Email Investigation)
+
+```spl
+index=botsv2 sourcetype=stream:smtp | stats count by recipient
+```
+
+> Used to identify high-volume recipients and potential exfiltration targets.
+
+---
+
+## 🎯 MITRE ATT&CK Mapping (Example: Day 2)
+
+| Tactic | Technique | ID | Description |
+|--------|-----------|----|-------------|
+| Initial Access | Phishing: Spearphishing Attachment | T1566.001 | Malicious attachments used to gain access |
+| Initial Access | Phishing: Spearphishing Link | T1566.002 | Links in emails leading to malicious sites |
+| Exfiltration | Exfiltration Over Email | T1048.003 | Data sent out via email channels |
+| Execution | User Execution | T1204 | User opens malicious attachment triggering execution |
+| Command and Control | Application Layer Protocol: Email | T1071.003 | Email used for C2 communication |
+
+---
+
+## 🧠 Interview Prep Focus
+
+- SPL fluency and detection logic
+- MITRE-aligned triage and escalation
+- Dashboard and alert design
+- Clear, reproducible documentation
+- GitHub-based portfolio visibility
+
+---
+
+## 🚀 Next Steps
+
+- Complete all 21 case studies
+- Build dashboards for SMTP, login, and malware activity
+- Publish playbooks for phishing, brute force, and insider threats
+- Prepare for L1 SOC interviews with scenario-based answers
+
+---
+
+## 📬 Contact
+
+**GitHub:** [mohan2004kumar](https://github.com/mohan2004kumar)  
+**Email:** mohantyping123@gmail.com  
+
