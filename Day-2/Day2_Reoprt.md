@@ -1,4 +1,5 @@
 
+```markdown
 # 📧 Day 2: Suspicious Email Activity Investigation  
 **Date:** September 05, 2025  
 **Analyst:** Mohan Kumar  
@@ -73,15 +74,15 @@ index=botsv2 sourcetype=stream:smtp | stats earliest(_time) as First latest(_tim
 
 ## 🧠 MITRE ATT&CK Mapping
 
-| Technique | ID | Description |
-|----------|----|-------------|
-| **Phishing: Spearphishing Attachment** | T1566.001 | Emails with malicious attachments targeting users |
-| **Phishing: Spearphishing Link** | T1566.002 | Emails containing links to malicious sites |
-| **Exfiltration Over Email** | T1048.003 | Data exfiltration via outbound email traffic |
-| **User Execution** | T1204 | Execution triggered by user opening malicious attachment |
-| **Command and Control via Email** | T1105 | Potential use of email for C2 communication |
+| Tactic | Technique | ID | Description |
+|--------|-----------|----|-------------|
+| **Initial Access** | Phishing: Spearphishing Attachment | T1566.001 | Malicious attachments used to gain access |
+| **Initial Access** | Phishing: Spearphishing Link | T1566.002 | Links in emails leading to malicious sites |
+| **Exfiltration** | Exfiltration Over Email | T1048.003 | Data sent out via email channels |
+| **Execution** | User Execution | T1204 | User opens malicious attachment triggering execution |
+| **Command and Control** | Application Layer Protocol: Email | T1071.003 | Email used for C2 communication |
 
-> These mappings help align your investigation with real-world adversary behaviors and support playbook creation.
+> These mappings align your detection logic with adversary behavior and support playbook development.
 
 ---
 
@@ -109,3 +110,4 @@ Be prepared to explain:
 - Create a phishing IR playbook based on today's findings
 - Build a dashboard to monitor SMTP anomalies
 ```
+
