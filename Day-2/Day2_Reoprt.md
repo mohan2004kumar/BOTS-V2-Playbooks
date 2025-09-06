@@ -1,7 +1,4 @@
 
-
-
-
 # 📧 Day 2: Suspicious Email Activity Investigation  
 **Date:** September 05, 2025  
 **Analyst:** Mohan Kumar  
@@ -14,7 +11,7 @@
 
 ## ✅ Investigation Summary
 
-This case focused on analyzing outbound email traffic using the `stream:smtp` sourcetype. The objective was to identify potential misuse of email services, such as unauthorized attachments or mass mailing to external domains.
+This case focused on analyzing outbound email traffic using the `stream:smtp` sourcetype. The objective was to identify potential misuse of email services, such as unauthorized attachments or mass mailing to external domains. The investigation confirmed data coverage, extracted sender/recipient patterns, and flagged suspicious attachments.
 
 ---
 
@@ -74,6 +71,20 @@ index=botsv2 sourcetype=stream:smtp | stats earliest(_time) as First latest(_tim
 
 ---
 
+## 🧠 MITRE ATT&CK Mapping
+
+| Technique | ID | Description |
+|----------|----|-------------|
+| **Phishing: Spearphishing Attachment** | T1566.001 | Emails with malicious attachments targeting users |
+| **Phishing: Spearphishing Link** | T1566.002 | Emails containing links to malicious sites |
+| **Exfiltration Over Email** | T1048.003 | Data exfiltration via outbound email traffic |
+| **User Execution** | T1204 | Execution triggered by user opening malicious attachment |
+| **Command and Control via Email** | T1105 | Potential use of email for C2 communication |
+
+> These mappings help align your investigation with real-world adversary behaviors and support playbook creation.
+
+---
+
 ## 📁 Artifacts
 
 - `Day2_Report.md` – This report  
@@ -87,6 +98,7 @@ index=botsv2 sourcetype=stream:smtp | stats earliest(_time) as First latest(_tim
 Be prepared to explain:
 - How you used SPL to isolate suspicious email behavior
 - What fields in `stream:smtp` were most useful (`sender`, `recipient`, `attachment_filename`)
+- How MITRE mapping strengthens your detection and response strategy
 - How you would escalate this case in a real SOC (e.g., alerting, IR playbook)
 
 ---
@@ -94,11 +106,6 @@ Be prepared to explain:
 ## 📌 Next Steps
 
 - Begin **Day 3: Login Attempts Investigation**
-- Create a playbook for email-based threat detection
-- Add MITRE mapping for phishing techniques (e.g., T1566.001)
+- Create a phishing IR playbook based on today's findings
+- Build a dashboard to monitor SMTP anomalies
 ```
-
-
-
-
-
