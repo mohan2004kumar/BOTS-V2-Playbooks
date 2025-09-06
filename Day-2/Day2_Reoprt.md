@@ -22,7 +22,7 @@ This case focused on analyzing outbound email traffic using the `stream:smtp` so
 | tstats count where index=botsv2 by sourcetype
 ```
 **Result:** Verified presence of `stream:smtp` among active sourcetypes.  
-📸 Screenshot: `Query-1.png`
+📸 Screenshot: ![Query 1](Query-1.png)
 
 ---
 
@@ -31,7 +31,7 @@ This case focused on analyzing outbound email traffic using the `stream:smtp` so
 index=botsv2 sourcetype=stream:smtp earliest=0
 ```
 **Result:** Retrieved full SMTP traffic logs for analysis.  
-📸 Screenshot: `Query-2.png`
+📸 Screenshot: ![Query 2](Query-2.png)
 
 ---
 
@@ -40,7 +40,7 @@ index=botsv2 sourcetype=stream:smtp earliest=0
 index=botsv2 sourcetype=stream:smtp sender="*@domain.com" earliest=0
 ```
 **Result:** Filtered emails sent by a specific user. Replace `*@domain.com` with actual sender for targeted analysis.  
-📸 Screenshot: `Query-3.png`
+📸 Screenshot: ![Query 3](Query-3.png)
 
 ---
 
@@ -49,7 +49,7 @@ index=botsv2 sourcetype=stream:smtp sender="*@domain.com" earliest=0
 index=botsv2 sourcetype=stream:smtp attachment_filename=* earliest=0
 ```
 **Result:** Found emails containing attachments. Flagged `.zip` and `.docm` files for deeper review.  
-📸 Screenshot: `Query-4.png`
+📸 Screenshot: ![Query 4](Query-4.png)
 
 ---
 
@@ -58,7 +58,7 @@ index=botsv2 sourcetype=stream:smtp attachment_filename=* earliest=0
 index=botsv2 sourcetype=stream:smtp | stats count by recipient
 ```
 **Result:** Identified high-volume recipients and external domains.  
-📸 Screenshot: `Query-5.png`
+📸 Screenshot: ![Query 5](Query-5.png)
 
 ---
 
@@ -67,7 +67,7 @@ index=botsv2 sourcetype=stream:smtp | stats count by recipient
 index=botsv2 sourcetype=stream:smtp | stats earliest(_time) as First latest(_time) as Last
 ```
 **Result:** Verified ingestion window and confirmed consistent timestamp coverage.  
-📸 Screenshot: `Query-6.png`
+📸 Screenshot: ![Query 6](Query-6.png)
 
 ---
 
@@ -109,5 +109,6 @@ Be prepared to explain:
 - Create a phishing IR playbook based on today's findings
 - Build a dashboard to monitor SMTP anomalies
 ```
+
 
 
