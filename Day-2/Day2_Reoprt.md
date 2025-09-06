@@ -1,5 +1,4 @@
 
-```markdown
 # 📧 Day 2: Suspicious Email Activity Investigation  
 **Date:** September 05, 2025  
 **Analyst:** Mohan Kumar  
@@ -110,4 +109,5 @@ Be prepared to explain:
 - Create a phishing IR playbook based on today's findings
 - Build a dashboard to monitor SMTP anomalies
 ```
+
 
